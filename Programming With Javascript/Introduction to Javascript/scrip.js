@@ -17,3 +17,5 @@ let mySelf = {
   profession: "Software Engineer",
   skills: ["JavaScript", "Python", "C++"],
 };
+
+console.log(mySelf);
