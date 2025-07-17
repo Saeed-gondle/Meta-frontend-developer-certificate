@@ -11,11 +11,11 @@ let mySelf = {
   isStudent: true,
   greet: function () {
     console.log(
-      `Hello, my name is ${this.name} and I am ${this.age} years old.`
+      `Hello, my name is ${this.name} and I am ${this.age} years old. I am a ${this.profession}`
     );
   },
   profession: "Software Engineer",
   skills: ["JavaScript", "Python", "C++"],
 };
 
-console.log(mySelf);
+mySelf.greet();
