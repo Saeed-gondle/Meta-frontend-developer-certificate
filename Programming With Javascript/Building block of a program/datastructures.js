@@ -1,10 +1,3 @@
-"use strict";
-console.log("Introduction to Javascript");
-({
-  hello: () => {
-    console.log("Hello, World!");
-  },
-}).hello();
 let mySelf = {
   name: "Muhammad Saeed",
   age: 19,
@@ -17,5 +10,4 @@ let mySelf = {
   profession: "Software Engineer",
   skills: ["JavaScript", "Python", "C++"],
 };
-
 mySelf.greet();
