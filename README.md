@@ -1,2 +1,2 @@
-# Meta-frontend-dveloper-certificate
+# Meta-frontend-developer-certificate
 
