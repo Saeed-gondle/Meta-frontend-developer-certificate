@@ -7,9 +7,14 @@ class Person {
   introduce() {
     return `Hello, my name is ${this.name}, I am ${this.age} years old and I work as a ${this.profession}.`;
   }
-  getDetails() {
-    return `Name: ${this.name}, Age: ${this.age}, Profession: ${this.profession}`;
+    getDetails() {
+        return this;
   }
 }
-let softwareEngineer = new Person('Alice', 30, 'Software Engineer');
+let softwareEngineer = new Person('Muhammad Saeed', 19, 'Software Engineer');
 console.log(softwareEngineer.introduce());
+console.log(softwareEngineer.getDetails());
+
+   
+   
+
