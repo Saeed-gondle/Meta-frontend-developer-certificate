@@ -33,7 +33,4 @@ console.log("Keys of mySelf:", Object.keys(mySelf));
 
 let mySelfStr = `My name is ${mySelf.firstName} ${mySelf.lastName}, I am ${mySelf.age} years old.`;
 console.log(mySelfStr);
-console.log(typeof [1, 2, 3, 4, 5]
-    , typeof "Hello World"
-    , typeof 42
-);
+console.log(typeof [1, 2, 3, 4, 5], typeof "Hello World", typeof 42);
