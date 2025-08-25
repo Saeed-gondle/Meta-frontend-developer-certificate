@@ -1,23 +1,450 @@
+/* Reset and base styles */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
-*::selection {
-  background-color: #000;
-  color: #0faf17;
-}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f4f4f4;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
   color: #333;
-  padding: 20px;
-  border: 1px dashed #0faf17;
-  width: 100%;
-  min-height: 100vh;
+  background-color: #f4f4f4;
+  /* padding: 20px; */
 }
+
+/* Main heading */
 h1 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
   text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+/* ...existing code... */
+
+/* Fixed header styling */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 2rem;
+}
+
+nav {
+  /* Remove justify-self: baseline; - not valid in flexbox */
+  width: auto; /* Change from 50% to auto for better flexibility */
+  width: 50%;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  flex-shrink: 0; /* Prevent logo from shrinking */
+}
+
+/* Fix link colors */
+a:link,
+a:visited {
+  color: #666; /* Fixed typo: was #6666 */
+  text-decoration: none;
+  transition: color 0.3s ease; /* Add smooth transition */
+}
+
+a:hover {
+  color: #2c3e50; /* Add hover state */
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Change from center to flex-end */
+  align-items: center;
+  padding: 10px 0;
+  gap: 2rem; /* Increase gap for better spacing */
+  margin: 0; /* Reset any default margin */
+}
+
+ul {
+  display: flex;
+  justify-content: flex-end; /* Aligns navigation to right */
+  align-items: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* EVEN BETTER: Use CSS Grid for header */
+header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 1rem 2rem;
+  gap: 2rem;
+}
+
+.logo {
+  grid-column: 1;
+}
+
+nav {
+  grid-column: 3;
+  justify-self: end;
+}
+
+
+/* ...existing code... */
+/* header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 2rem;
+}
+nav{
+    justify-self: baseline;
+    width: 50%;
+}
+.logo{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+a:link,a:visited{
+    color: #6666;
+    text-decoration: none;
+}
+li{
+  list-style: none;
+}
+ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  gap: 1rem;
+
+
+} */
+/* Container - controls viewport responsiveness */
+main {
+  margin-top: 4rem;
+}
+.container {
+  width: clamp(300px, 90vw, 600px);
+  margin: 0 auto;
+  background-color: #fff;
+  padding: clamp(20px, 5vw, 40px);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styling */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Input fields - 100% of container */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e1e1e1;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+/* Focus states */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #0faf17;
+  box-shadow: 0 0 0 3px rgba(15, 175, 23, 0.1);
+}
+
+/* Textarea specific */
+textarea {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* Button styling */
+button {
+  background-color: #0faf17;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0e8e14;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(15, 175, 23, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea,
+  button {
+    padding: 14px 16px;
+    font-size: 16px; /* Prevents iOS zoom */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    width: 95vw;
+    padding: 15px;
+  }
+
+  form {
+    gap: 12px;
+  }
+}
+
+/* Optional: Loading state for button */
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Placeholder styling */
+input::placeholder,
+textarea::placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+/* Error state (if you want to add form validation) */
+input.error,
+textarea.error {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+/* Success state */
+input.success,
+textarea.success {
+  border-color: #27ae60;
+  box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+}
+
+/* OLD FOOTER CSS - COMMENTED OUT */
+/* footer {
+  padding: 20px 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.nav-links-footer ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.social-links ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .nav-links-footer ul,
+  .social-links ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+} */
+
+/* ===== IMPROVED FOOTER LAYOUT - FIXED VERSION ===== */
+
+/* Footer Container */
+footer {
+  position: absolute;
+  bottom: 0;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 2rem 0 1rem;
+  margin-top: 3rem;
+  width: 100%;
+}
+
+/* Footer Main Layout */
+footer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: 2rem;
+  align-items: start;
+}
+
+/* Copyright Section */
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.copy p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #bdc3c7;
+  line-height: 1.4;
+}
+
+/* Footer Links Container */
+.footer-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Navigation Links Footer */
+.nav-links-footer h4,
+.social-links h4 {
+  color: #ecf0f1;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.nav-links-footer ul,
+.social-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.nav-links-footer a,
+.social-links a {
+  color: #bdc3c7;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.nav-links-footer a:hover,
+.social-links a:hover {
+  color: #3498db;
+  transform: translateX(4px);
+}
+
+/* Social Links Specific */
+.social-links a:hover {
+  color: #e74c3c;
+}
+
+/* Footer Bottom Border */
+footer::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #34495e 50%, transparent 100%);
+  margin-top: 1.5rem;
+}
+
+/* Responsive Footer Design */
+@media (max-width: 768px) {
+  footer {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+    text-align: center;
+  }
+  
+  .footer-links {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .copy {
+    order: 2;
+    padding-top: 1rem;
+    border-top: 1px solid #34495e;
+  }
+  
+  .nav-links-footer ul,
+  .social-links ul {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: 1rem;
+  }
+  
+  .nav-links-footer a,
+  .social-links a {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
 }
