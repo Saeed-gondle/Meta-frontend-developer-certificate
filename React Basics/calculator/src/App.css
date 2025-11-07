@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.calculator {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.calculator h1 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: left;
+}
+
+/* Display Styles */
+.display {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.2rem;
+  border: 2px solid #333;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  background-color: white;
+}
+
+.result-display {
+  font-weight: bold;
+  color: #333;
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+}
+
+.input-display {
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+/* Number Pad */
+.number-pad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.number-btn {
+  padding: 15px;
+  font-size: 1.1rem;
+  border: 2px solid #333;
+  background-color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.number-btn:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-1px);
+}
+
+.number-btn:active {
+  transform: translateY(0);
+}
+
+/* Operation Buttons */
+.operation-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.operation-btn {
+  flex: 1 1 calc(50% - 4px);
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #333;
+  background-color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.operation-btn:hover {
+  background-color: #e8e8e8;
+  transform: translateY(-1px);
+}
+
+.operation-btn:active {
+  transform: translateY(0);
+}
+
+/* Reset Buttons */
+.reset-btn {
+  flex: 1 1 calc(50% - 4px);
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.input-reset {
+  background-color: #ff6b6b;
+}
+
+.input-reset:hover {
+  background-color: #ff5252;
+  transform: translateY(-1px);
+}
+
+.result-reset {
+  background-color: #ff6b6b;
+}
+
+.result-reset:hover {
+  background-color: #ff5252;
+  transform: translateY(-1px);
+}
+
+.reset-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .calculator {
+    padding: 20px;
+  }
+
+  .calculator h1 {
+    font-size: 1.3rem;
+  }
+
+  .number-btn,
+  .operation-btn,
+  .reset-btn {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+}
